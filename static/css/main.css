@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* HEADER */
+
+header {
+    background-color: rgba(27, 27, 27, 0.514);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+ul li a {
+    display: block;
+    padding: 10px;
+}
+
+/* BODY */
+
+body {
+    background: url("https://acegif.com/wp-content/gifs/starfall-gif-46.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+/* LOGIN */
+
+.card-header h1 {
+    text-align: center;
+    font-size: 35px;
+    color: aliceblue;
+    margin-bottom: 15px;
+}
+
+.login {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-login {
+    padding: 15px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(27, 27, 27, 0.514);
+    border-radius: 10px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-login {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+}
+
+.input-login input {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(27, 27, 27, 0.514);
+    color: white;
+    margin-bottom: 10px;
+    border: #dbdbdb solid 2px;
+}
+
+#logar {
+    background-color: #7575f083;
+    border: none;
+    margin-bottom: 0;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+label {
+    color: aliceblue;
+}

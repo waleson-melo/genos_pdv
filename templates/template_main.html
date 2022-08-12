@@ -5,7 +5,7 @@
 
 <head>
     <link rel="icon" type="image/x-icon" href="">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <meta charset="UTF-8">
     {% block nome_pagina %}
     <title>Genos PDV</title>
@@ -17,7 +17,7 @@
         {% block btn_voltar_pagina %}
         <a href="">Voltar</a>
         {% endblock %}
-        <!-- <nav>
+        <nav>
             <ul>
                 <li>
                     {% block btn_index %}
@@ -30,11 +30,11 @@
             <ul>
                 <li>
                     {% block btn_sair %}
-                    <a href="">Sair</a>
+                    <a href="{% url 'logout' %}">Logout</a>
                     {% endblock %}
                 </li>
             </ul>
-        </nav> -->
+        </nav>
     </header>
 
     {% block menus %}
