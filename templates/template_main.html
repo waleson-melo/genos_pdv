@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="">
+    <link rel="stylesheet" href="">
+    <meta charset="UTF-8">
+    {% block nome_pagina %}
+    <title>Genos PDV</title>
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        {% block btn_voltar_pagina %}
+        <a href="">Voltar</a>
+        {% endblock %}
+        <!-- <nav>
+            <ul>
+                <li>
+                    {% block btn_index %}
+                    <a href="">Genos PDV</a>
+                    {% endblock %}
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li>
+                    {% block btn_sair %}
+                    <a href="">Sair</a>
+                    {% endblock %}
+                </li>
+            </ul>
+        </nav> -->
+    </header>
+
+    {% block menus %}
+
+    {% endblock %}
+
+    <script src=""></script>
+
+    <footer>
+        <P>Genos</P>
+    </footer>
+
+    {% block scripts %}
+
+    {% endblock %}
+</body>
+
+</html>
