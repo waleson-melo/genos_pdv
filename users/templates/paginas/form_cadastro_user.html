@@ -1,0 +1,27 @@
+{% extends 'template_main.html' %}
+
+{% load static %}
+
+{% block nome_pagina %}
+<title>Cadastrar Usuário</title>
+{% endblock %}
+
+{% block menus %}
+<section class="login">
+    <form class="card-cadastro" method="post">
+        <div class="card-header">
+            <h1>{{ titulo_pagina }}</h1>
+
+            {% csrf_token %}
+
+            <div class="card-content-cadastro">
+                <div class="card-cadastro-input">
+                    {{ form.as_p }}
+
+                    <button type="submit">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock %}

@@ -4,4 +4,5 @@ from utils.pessoa import Pessoa
 
 
 class User(AbstractUser, Pessoa):
-    pass
+    def __str__(self):
+        return "{} ({})".format(self.first_name, self.last_name)
