@@ -6,19 +6,35 @@
 <title>Cadastrar Usuário</title>
 {% endblock %}
 
+{% block nome_menu %}
+<h1 class="h2">{{ titulo_pagina }}</h1>
+{% endblock %}
+
 {% block menus %}
 <section class="login">
     <form class="card-cadastro" method="post">
         <div class="card-header">
-            <h1>{{ titulo_pagina }}</h1>
 
             {% csrf_token %}
 
             <div class="card-content-cadastro">
                 <div class="card-cadastro-input">
-                    {{ form.as_p }}
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
 
-                    <button type="submit">Cadastrar</button>
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                    
+                    {{ form.first_name.label_tag }}
+                    {{ form.first_name }}
+                    
+                    {{ form.last_name.label_tag }}
+                    {{ form.last_name }}
+
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+
+                    <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
             </div>
         </div>
