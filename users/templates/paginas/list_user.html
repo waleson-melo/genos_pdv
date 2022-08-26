@@ -1,0 +1,37 @@
+{% extends 'template_main.html' %}
+
+{% load static %}
+
+{% block nome_pagina %}
+<title>Listar Usuário</title>
+{% endblock %}
+
+{% block menus %}
+<section class="login">
+    <table>
+        <tr>
+            <th>Nome:</th>
+            <th>Usuario:</th>
+            <th>Email:</th>
+            <th>Opçoes:</th>
+        </tr>
+
+        {% for user in object_list %}
+        <tr>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+                <a href="{% url 'users-alterar' user.pk %}">Editar</a>
+                <a href="">Apagar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td>Nenhum dado para mostrar</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</section>
+{% endblock %}

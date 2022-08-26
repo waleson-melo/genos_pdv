@@ -1,8 +1,7 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 
-from .views import Cadastrar
-from .views import Alterar
+from .views import Cadastrar, Alterar, Listar
 
 
 urlpatterns = [
@@ -12,4 +11,5 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('cadastrar/', Cadastrar.as_view(), name='users-cadastrar'),
     path('alterar/<int:pk>', Alterar.as_view(), name='users-alterar'),
+    path('listar/', Listar.as_view(), name='users-listar'),
 ]

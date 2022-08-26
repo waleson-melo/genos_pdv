@@ -1,4 +1,5 @@
 from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.list import ListView
 from django.urls import reverse_lazy
 
 from .models import User
@@ -26,5 +27,16 @@ class Alterar(UpdateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['titulo_pagina'] = 'Alterar Usuario'
+        
+        return context
+
+
+class Listar(ListView):
+    template_name = 'paginas/list_user.html'
+    model = User
+    
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['titulo_pagina'] = 'Listar Usuario'
         
         return context
