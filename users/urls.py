@@ -2,6 +2,7 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 
 from .views import Cadastrar
+from .views import Alterar
 
 
 urlpatterns = [
@@ -10,4 +11,5 @@ urlpatterns = [
         ), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('cadastrar/', Cadastrar.as_view(), name='users-cadastrar'),
+    path('alterar/<int:pk>', Alterar.as_view(), name='users-alterar'),
 ]

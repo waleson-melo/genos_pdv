@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
     margin: 0;
@@ -6,12 +6,12 @@
     list-style: none;
     font-size: 1rem;
     font-family: "Poppins", sans-serif;
-}
+} */
 
 
 /* HEADER */
 
-header {
+/* header {
     background-color: rgba(27, 27, 27, 0.514);
     display: flex;
     justify-content: space-between;
@@ -22,19 +22,19 @@ header {
 ul li a {
     display: block;
     padding: 10px;
-}
+} */
 
 /* BODY */
 
-body {
+/* body {
     background: url("https://acegif.com/wp-content/gifs/starfall-gif-46.gif");
     background-repeat: no-repeat;
     background-size: cover;
-  }
+  } */
   
 /* LOGIN */
 
-.card-header h1 {
+/* .card-header h1 {
     text-align: center;
     font-size: 35px;
     color: aliceblue;
@@ -91,4 +91,4 @@ body {
 
 label {
     color: aliceblue;
-}
+} */
