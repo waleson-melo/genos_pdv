@@ -1,0 +1,43 @@
+{% extends 'template_main.html' %}
+
+{% load static %}
+
+{% block nome_pagina %}
+<title>Cadastrar Cliente</title>
+{% endblock %}
+
+{% block nome_menu %}
+<h1 class="h2">{{ titulo_pagina }}</h1>
+{% endblock %}
+
+{% block menus %}
+<section class="login">
+    <form class="card-cadastro" method="post">
+        <div class="card-header">
+
+            {% csrf_token %}
+
+            <div class="card-content-cadastro">
+                <div class="card-cadastro-input">
+                    {{ form.cpf.label_tag }}
+                    {{ form.cpf }}
+
+                    {{ form.nome.label_tag }}
+                    {{ form.nome }}
+                    
+                    {{ form.telefone.label_tag }}
+                    {{ form.telefone }}
+                    
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+
+                    {{ form.data_cadastro.label_tag }}
+                    {{ form.data_cadastro }}
+
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock %}
