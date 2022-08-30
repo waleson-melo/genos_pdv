@@ -19,21 +19,32 @@
             {% csrf_token %}
 
             <div class="card-content-cadastro">
-                <div class="card-cadastro-input">
-                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
-                    {% render_field form.email class='form-control' %}
+                <div class="card-cadastro-input row g-3">
 
-                    <label for="{{ form.username.id_for_label }}">{{ form.username.label }}:</label>
-                    {% render_field form.username class='form-control' %}
+                    <div class="col-md-6">
+                        <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}:</label>
+                        {% render_field form.first_name class='form-control' %}
+                    </div>
                     
-                    <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}:</label>
-                    {% render_field form.first_name class='form-control' %}
-                    
-                    <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}:</label>
-                    {% render_field form.last_name class='form-control' %}
+                    <div class="col-md-6">
+                        <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}:</label>
+                        {% render_field form.last_name class='form-control' %}
+                    </div>
 
-                    <label for="{{ form.password.id_for_label }}">{{ form.password.label }}:</label>
-                    {% render_field form.password class='form-control' %}
+                    <div class="col-md-4">
+                        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+                        {% render_field form.email class='form-control' %}
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <label for="{{ form.username.id_for_label }}">{{ form.username.label }}:</label>
+                        {% render_field form.username class='form-control' %}
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="{{ form.password.id_for_label }}">{{ form.password.label }}:</label>
+                        {% render_field form.password class='form-control' %}
+                    </div>
 
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
