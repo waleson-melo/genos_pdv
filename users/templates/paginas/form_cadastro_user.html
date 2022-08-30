@@ -1,6 +1,7 @@
 {% extends 'template_main.html' %}
 
 {% load static %}
+{% load widget_tweaks %}
 
 {% block nome_pagina %}
 <title>Cadastrar Usuário</title>
@@ -19,20 +20,20 @@
 
             <div class="card-content-cadastro">
                 <div class="card-cadastro-input">
-                    {{ form.email.label_tag }}
-                    {{ form.email }}
+                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+                    {% render_field form.email class='form-control' %}
 
-                    {{ form.username.label_tag }}
-                    {{ form.username }}
+                    <label for="{{ form.username.id_for_label }}">{{ form.username.label }}:</label>
+                    {% render_field form.username class='form-control' %}
                     
-                    {{ form.first_name.label_tag }}
-                    {{ form.first_name }}
+                    <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}:</label>
+                    {% render_field form.first_name class='form-control' %}
                     
-                    {{ form.last_name.label_tag }}
-                    {{ form.last_name }}
+                    <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}:</label>
+                    {% render_field form.last_name class='form-control' %}
 
-                    {{ form.password.label_tag }}
-                    {{ form.password }}
+                    <label for="{{ form.password.id_for_label }}">{{ form.password.label }}:</label>
+                    {% render_field form.password class='form-control' %}
 
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
