@@ -1,0 +1,35 @@
+{% extends 'template_main.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block nome_pagina %}
+<title>{{ titulo_pagina }}</title>
+{% endblock %}
+
+{% block nome_menu %}
+<h1 class="h2">Categoria</h1>
+{% endblock %}
+
+{% block menus %}
+<section class="login">
+    <form class="card-cadastro" method="post">
+        <div class="card-header">
+
+            {% csrf_token %}
+
+            <div class="card-content-cadastro">
+                <div class="card-cadastro-input">
+                    <label for="{{ form.nome.id_for_label }}">{{ form.nome.label }}:</label>
+                    {% render_field form.nome class='form-control' %}
+                    
+                    <label for="{{ form.descricao.id_for_label }}">{{ form.descricao.label }}:</label>
+                    {% render_field form.descricao class='form-control' %}
+
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock %}
