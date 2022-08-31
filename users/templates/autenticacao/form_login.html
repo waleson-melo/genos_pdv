@@ -1,18 +1,10 @@
-{% extends 'template_main.html' %}
+{% load static %}
+{% load widget_tweaks %}
 
-{% block nome_pagina %}
-<title>Login</title>
+{% block tag_link_css %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 {% endblock %}
 
-{% block btn_voltar_pagina %}
-<a href=""></a>
-{% endblock %}
-
-{% block btn_sair %}
-
-{% endblock %}
-
-{% block menus %}
 <section class="login">
 
     {% if request.user.is_authenticated %}
@@ -30,25 +22,19 @@
             <h1>Login</h1>
         </div>
 
-        <div class="card-content">
-            <div class="input-login">
-                {{ form.username.label_tag }}
-                {{ form.username }}
-            </div>
 
-            <div class="input-login">
-                {{ form.password.label_tag }}
-                {{ form.password }}
-            </div>
-            <div class="input-login">
-                {{ form.username.errors }}
-                {{ form.password.errors }}
-                <input id="logar" type="submit" value="Entrar" class="submit">
-            </div>
-        </div>
+        <label for="{{ form.username.id_for_label }}">{{ form.username.label }}:</label>
+        {% render_field form.username class='form-control' %}
+
+        <label for="{{ form.password.id_for_label }}">{{ form.password.label }}:</label>
+        {% render_field form.password class='form-control' %}
+        
+        {{ form.username.errors }}
+        {{ form.password.errors }}
+
+        <input class="btn btn-primary" type="submit" value="Entrar" class="submit">
 
     </form>
     {% endif %}
 
 </section>
-{% endblock %}
