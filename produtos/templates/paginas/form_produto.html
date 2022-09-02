@@ -19,18 +19,31 @@
             {% csrf_token %}
 
             <div class="card-content-cadastro">
-                <div class="card-cadastro-input">
-                    <label for="{{ form.nome.id_for_label }}">{{ form.nome.label }}:</label>
-                    {% render_field form.nome class='form-control' %}
+                <div class="card-cadastro-input row g-3">
+                    <div class="col-md-6">
+                        <label for="{{ form.nome.id_for_label }}">{{ form.nome.label }}:</label>
+                        {% render_field form.nome class='form-control' %}
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="{{ form.estoque.id_for_label }}">{{ form.estoque.label }}:</label>
+                        {% render_field form.estoque class='form-control' %}
+                    </div>
                     
-                    <label for="{{ form.descricao.id_for_label }}">{{ form.descricao.label }}:</label>
-                    {% render_field form.descricao class='form-control' %}
+                    <div class="col-md-12">
+                        <label for="{{ form.descricao.id_for_label }}">{{ form.descricao.label }}:</label>
+                        {% render_field form.descricao class='form-control' %}
+                    </div>
 
-                    <label for="{{ form.categoria.id_for_label }}">Categoria:</label>
-                    {% render_field form.categoria class='form-select' %}
-
-                    <label for="{{ form.estoque.id_for_label }}">{{ form.estoque.label }}:</label>
-                    {% render_field form.estoque class='form-control' %}
+                    <div class="col-md-6">
+                        <label for="{{ form.categoria.id_for_label }}">Categoria:</label>
+                        {% render_field form.categoria class='form-select' %}
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <a class="btn btn-success" href="{% url 'produtos-categoria-cadastrar' %}">Novo</a>
+                        <a class="btn btn-warning">Editar</a>
+                    </div>
                     
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
