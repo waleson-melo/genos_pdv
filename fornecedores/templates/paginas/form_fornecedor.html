@@ -1,0 +1,41 @@
+{% extends 'template_main.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block nome_pagina %}
+<title>Cadastrar Fornecedor</title>
+{% endblock %}
+
+{% block nome_menu %}
+<h1 class="h2">{{ titulo_pagina }}</h1>
+{% endblock %}
+
+{% block menus %}
+<section class="login">
+    <form class="card-cadastro" method="post">
+        <div class="card-header">
+
+            {% csrf_token %}
+
+            <div class="card-content-cadastro">
+                <div class="card-cadastro-input">
+                    <label id="{{ form.cpf.id_for_label }}">{{ form.cpf.label }}:</label>
+                    {% render_field form.cpf class='form-control' %}
+
+                    <label for="{{ form.nome.id_for_label }}">{{ form.nome.label }}:</label>
+                    {% render_field form.nome class='form-control' %}
+                    
+                    <label for="{{ form.telefone.id_for_label }}">{{ form.telefone.label }}:</label>
+                    {% render_field form.telefone class='form-control' %}
+                    
+                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+                    {% render_field form.email class='form-control' %}
+
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock %}
