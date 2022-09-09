@@ -1,15 +1,8 @@
 {% extends 'template_main.html' %}
 
 {% load static %}
+
 {% load widget_tweaks %}
-
-{% block nome_pagina %}
-<title>{{ titulo_pagina }}</title>
-{% endblock %}
-
-{% block nome_menu %}
-<h1 class="h2">Produto</h1>
-{% endblock %}
 
 {% block menus %}
 <section class="login">
@@ -41,11 +34,15 @@
                     </div>
                     
                     <div class="col-md-6">
-                        <a class="btn btn-success" href="{% url 'produtos-categoria-cadastrar' %}">Novo</a>
-                        <a class="btn btn-warning">Editar</a>
+                        <br>
+                        <a class="btn btn-success btn-md" href="{% url 'produtos-categoria-cadastrar' %}">Novo</a>
+                        <a class="btn btn-warning btn-md" href="">Editar</a>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <div class="col-md-6">
+                      <button type="submit" class="btn btn-primary">Salvar</button>
+                      <a type="submit" class="btn btn-danger" href="{% url 'produtos-produto-listar' %}">Cancelar</a>
+                    </div>
                 </div>
             </div>
         </div>
