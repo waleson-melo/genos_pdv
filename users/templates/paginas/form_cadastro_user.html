@@ -46,7 +46,16 @@
                         {% render_field form.password class='form-control' %}
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <div class="col-md-6">
+                      <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save-fill"></i>
+                        Salvar
+                      </button>
+                      <a href="{% url 'users-listar' %}" class="btn btn-danger">
+                        <i class="bi bi-x-square-fill"></i>
+                        Cancelar
+                      </a>
+                    </div>
                 </div>
             </div>
         </div>

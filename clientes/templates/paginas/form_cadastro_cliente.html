@@ -13,29 +13,36 @@
 
 {% block menus %}
 <section class="login">
-    <form class="card-cadastro" method="post">
-        <div class="card-header">
+  <form class="card-cadastro" method="post">
+    <div class="card-header">
 
-            {% csrf_token %}
+      {% csrf_token %}
 
-            <div class="card-content-cadastro">
-                <div class="card-cadastro-input">
-                    <label id="{{ form.cpf.id_for_label }}">{{ form.cpf.label }}:</label>
-                    {% render_field form.cpf class='form-control' %}
+      <div class="card-content-cadastro">
+        <div class="card-cadastro-input">
+          <label id="{{ form.cpf.id_for_label }}">{{ form.cpf.label }}:</label>
+          {% render_field form.cpf class='form-control' %}
 
-                    <label for="{{ form.nome.id_for_label }}">{{ form.nome.label }}:</label>
-                    {% render_field form.nome class='form-control' %}
-                    
-                    <label for="{{ form.telefone.id_for_label }}">{{ form.telefone.label }}:</label>
-                    {% render_field form.telefone class='form-control' %}
-                    
-                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
-                    {% render_field form.email class='form-control' %}
+          <label for="{{ form.nome.id_for_label }}">{{ form.nome.label }}:</label>
+          {% render_field form.nome class='form-control' %}
+          
+          <label for="{{ form.telefone.id_for_label }}">{{ form.telefone.label }}:</label>
+          {% render_field form.telefone class='form-control' %}
+          
+          <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+          {% render_field form.email class='form-control' %}
 
-                    <button type="submit" class="btn btn-primary">Salvar</button>
-                </div>
-            </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-save-fill"></i>
+            Salvar
+          </button>
+          <a href="{% url 'clientes-listar' %}" class="btn btn-danger">
+            <i class="bi bi-x-square-fill"></i>
+            Cancelar
+          </a>
         </div>
-    </form>
+      </div>
+    </div>
+  </form>
 </section>
 {% endblock %}

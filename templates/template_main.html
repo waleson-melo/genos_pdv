@@ -171,7 +171,7 @@
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" href="{% url 'logout' %}">
                 <i class="bi bi-power"></i>
                 Sair
               </a>
@@ -213,13 +213,13 @@
         </a>
       </li>
       <li>
-        <a href="" class="nav-link">
+        <a href="{% url 'clientes-listar' %}" class="nav-link">
           <i class="bi bi-people-fill"></i>
           Clientes
         </a>
       </li>
       <li>
-        <a href="" class="nav-link">
+        <a href="{% url 'users-listar' %}" class="nav-link">
           <i class="bi bi-person-fill"></i>
           Usuário
         </a>
