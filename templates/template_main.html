@@ -195,7 +195,7 @@
         </a>
       </li>
       <li>
-        <a href="" class="nav-link">
+        <a href="{% url 'vendas-listar' %}" class="nav-link">
           <i class="bi bi-currency-dollar"></i>
           Vendas
         </a>
@@ -239,31 +239,31 @@
 
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{% url 'vendas-cadastrar' %}">
                   <i class="bi bi-currency-dollar"></i>
                   Venda
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{% url 'produtos-produto-cadastrar' %}">
                   <i class="bi bi-cart-fill"></i>
                   Produto
                 </a>
               </li>
               <li>
-                <a class="dropdown-item">
+                <a class="dropdown-item" href="{% url 'fornecedores-cadastrar' %}">
                   <i class="bi bi-truck-front-fill"></i>
                   Fornecedor
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{% url 'clientes-cadastrar' %}">
                   <i class="bi bi-people-fill"></i>
                   Cliente
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{% url 'users-cadastrar' %}">
                   <i class="bi bi-person-fill"></i>
                   Usuário
                 </a>
@@ -372,6 +372,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery.formset.js' %}"></script>
     {% block scripts %}
 
     {% endblock %}

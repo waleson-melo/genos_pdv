@@ -1,0 +1,132 @@
+{% extends 'template_main.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block nome_pagina %}
+<title>Cadastrar Venda</title>
+{% endblock %}
+
+{% block nome_menu %}
+<h1 class="h2">{{ titulo_pagina }}</h1>
+{% endblock %}
+
+{% block menus %}
+<section class="login">
+  <form class="card-cadastro" method="post">
+    <div class="card-header">
+
+      {% csrf_token %}
+
+      <div class="card-content-cadastro">
+        <div class="card-cadastro-input">
+          <label id="{{ form.cliente.id_for_label }}">{{ form.cliente.label }}:</label>
+          {% render_field form.cliente class='form-control' %}
+
+          <label for="{{ form.usuario.id_for_label }}">{{ form.usuario.label }}:</label>
+          {% render_field form.usuario class='form-control' %}
+
+          {{ form_itemvenda.management_form }}
+          <label>Produtos:</label>
+          <div class="form-control">
+            {% for f_iv in form_itemvenda %}
+            {{ f_iv.errors  }}
+            <div class="form-control inlineform d-flex">
+              <div class="col-md-4">
+                {{ f_iv.produto.label }}:
+                {% render_field f_iv.produto class='' %}
+              </div>
+              <div class="col-md-4">
+                {{ f_iv.quantidade.errors }}
+                {{ f_iv.quantidade.label }}:
+                {% render_field f_iv.quantidade class='' value='0' %}
+              </div>
+              <div class="col-md-3">
+                {{ f_iv.total.errors  }}
+                {{ f_iv.total.label }}:
+                {% render_field f_iv.total class='total_prod' value='0' %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          
+          <label for="{{ form.descricao.id_for_label }}">{{ form.descricao.label }}:</label>
+          {% render_field form.descricao class='form-control' %}
+
+          <label for="{{ form.total.id_for_label }}">{{ form.total.label }}:</label>
+          {% render_field form.total class='form-control' value='0' %}
+
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-save-fill"></i>
+            Salvar
+          </button>
+          <a href="{% url 'clientes-listar' %}" class="btn btn-danger">
+            <i class="bi bi-x-square-fill"></i>
+            Cancelar
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+  $(function(){
+    $('.inlineform').formset({
+      prefix: '{{ form_itemvenda.prefix }}',
+      addText: 'Adicionar',
+      deleteText: 'Remover',
+      addCssClass: 'btn btn-success btn-sm add-btn',
+      deleteCssClass: 'btn btn-danger btn-sm'
+    });
+  })
+
+  let add_prod = document.getElementsByClassName('add-btn')
+  let inputs = document.querySelectorAll("input")
+
+  /*add_prod.addEventListener("click", function(){
+    console.log("olha")
+  });*/
+  console.log(add_prod.length)
+
+  /*add_prod.addEventListener("click", function onClick(){
+    inputs = document.querySelectorAll("input")
+    console.log('ooooo')
+  });*/
+
+  inputs.forEach(function(input) {
+    input.addEventListener("click", function(event){
+      const el = event.target || event.srcElement;
+      const id = el.id;
+
+      let id_element = id.split('-')
+      id_element[2] = 'quantidade'
+      let id_quantidade = id_element[0] + '-' + id_element[1] + '-' + id_element[2]
+      id_element[2] = 'produto'
+      let id_produto = id_element[0] + '-' + id_element[1] + '-' + id_element[2]
+      id_element[2] = 'total'
+      let id_total_prod = id_element[0] + '-' + id_element[1] + '-' + id_element[2]
+
+      let prod = document.getElementById(id_produto)
+      var valor = prod.options[prod.selectedIndex].text
+      var new_valor = valor.split('-')[1]
+
+      let quant = document.getElementById(id_quantidade)
+      
+      let total_prod = document.getElementById(id_total_prod)
+      total_prod.value = quant.value * new_valor
+
+      let soma_total = 0
+      let campos_total_produto = document.querySelectorAll("input.total_prod")
+      campos_total_produto.forEach(function(campo_total_produto){
+        soma_total += parseFloat(campo_total_produto.value)
+      });
+
+      let total = document.getElementById('id_total')
+      total.value = soma_total
+    });
+  });
+</script>
+{% endblock %}

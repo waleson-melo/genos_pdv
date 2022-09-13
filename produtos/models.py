@@ -14,6 +14,7 @@ class Produto(models.Model):
     descricao = models.TextField(max_length=100, blank=True, null=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
     estoque = models.IntegerField()
+    valor = models.FloatField()
     
     def __str__(self):
-        return self.nome
+        return '{}-{}'.format(self.nome, self.valor)

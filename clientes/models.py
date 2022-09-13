@@ -9,4 +9,4 @@ class Cliente(models.Model):
     data_cadastro = models.DateField('Data de cadastro', auto_now_add=True)
     
     def __str__(self):
-        return 'Cliente: {}'.format(self.nome)
+        return '{}'.format(self.nome)

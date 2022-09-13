@@ -21,7 +21,7 @@ class CadastroCategoria(CreateView):
 class CadastroProduto(CreateView):
     template_name = 'paginas/form_produto.html'
     model = Produto
-    fields = ['nome', 'descricao', 'categoria', 'estoque']
+    fields = ['nome', 'descricao', 'categoria', 'estoque', 'valor']
     success_url = reverse_lazy('produtos-produto-listar')
     
     def get_context_data(self, *args, **kwargs):
@@ -47,7 +47,7 @@ class AlterarCategoria(UpdateView):
 class AlterarProduto(UpdateView):
     template_name = 'paginas/form_produto.html'
     model = Produto
-    fields = ['nome', 'descricao', 'categoria', 'estoque']
+    fields = ['nome', 'descricao', 'categoria', 'estoque', 'valor']
     success_url = reverse_lazy('produtos-produto-listar')
     
     def get_context_data(self, *args, **kwargs):
