@@ -11,7 +11,7 @@ from .forms import VendaForm, ItemVendaForm
 def CadastroVenda(request):
     if request.method == 'GET':
         form = VendaForm()
-        form_itemvenda_factory = inlineformset_factory(Venda, ItemVenda, form=ItemVendaForm, extra=5)
+        form_itemvenda_factory = inlineformset_factory(Venda, ItemVenda, form=ItemVendaForm, extra=4)
         form_itemvenda = form_itemvenda_factory()
         context = {
             'form': form,
